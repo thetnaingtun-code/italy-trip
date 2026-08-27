@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy Itinerary: Florence, Milan & Lake Como</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .hero-bg { 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1543429776-2782fc8e1acd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .link-hover { text-decoration: underline; text-decoration-color: #cbd5e1; text-underline-offset: 4px; transition: all 0.3s ease; }
+        .link-hover:hover { text-decoration-color: #3b82f6; color: #1d4ed8; }
+    </style>
+    <script>
+        function showTab(day) {
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('opacity-100');
+                el.classList.add('opacity-0');
+            });
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('text-blue-600', 'border-blue-600', 'bg-blue-50');
+                el.classList.add('text-gray-500', 'border-transparent', 'hover:bg-gray-50');
+            });
+            
+            const selectedContent = document.getElementById(day);
+            selectedContent.classList.remove('hidden');
+            setTimeout(() => {
+                selectedContent.classList.remove('opacity-0');
+                selectedContent.classList.add('opacity-100');
+            }, 50);
+
+            const selectedBtn = document.getElementById('btn-' + day);
+            selectedBtn.classList.remove('text-gray-500', 'border-transparent', 'hover:bg-gray-50');
+            selectedBtn.classList.add('text-blue-600', 'border-blue-600', 'bg-blue-50');
+        }
+    </script>
+</head>
+<body class="text-gray-800 antialiased">
+    <!-- Hero Section -->
+    <header class="hero-bg h-80 md:h-96 w-full flex items-center justify-center text-center px-4">
+        <div class="text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight drop-shadow-md">A Tuscan & Lombardy Escape</h1>
+            <p class="text-lg md:text-xl font-light opacity-90 tracking-wide drop-shadow">Florence • Milan • Lake Como | Sept 22 - 25, 2026</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10 pb-20">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            
+            <!-- Tabs -->
+            <div class="flex flex-wrap border-b border-gray-200">
+                <button id="btn-day1" onclick="showTab('day1')" class="tab-btn flex-1 py-4 px-2 text-center text-blue-600 border-b-2 border-blue-600 bg-blue-50 font-medium text-sm md:text-base transition-all duration-200 focus:outline-none">
+                    <span class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Sept 22</span>
+                    Day 1: Florence
+                </button>
+                <button id="btn-day2" onclick="showTab('day2')" class="tab-btn flex-1 py-4 px-2 text-center text-gray-500 border-b-2 border-transparent hover:bg-gray-50 font-medium text-sm md:text-base transition-all duration-200 focus:outline-none">
+                    <span class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Sept 23</span>
+                    Day 2: Milan
+                </button>
+                <button id="btn-day3" onclick="showTab('day3')" class="tab-btn flex-1 py-4 px-2 text-center text-gray-500 border-b-2 border-transparent hover:bg-gray-50 font-medium text-sm md:text-base transition-all duration-200 focus:outline-none">
+                    <span class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Sept 24</span>
+                    Day 3: Lake Como
+                </button>
+                <button id="btn-day4" onclick="showTab('day4')" class="tab-btn flex-1 py-4 px-2 text-center text-gray-500 border-b-2 border-transparent hover:bg-gray-50 font-medium text-sm md:text-base transition-all duration-200 focus:outline-none">
+                    <span class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Sept 25</span>
+                    Day 4: Departure
+                </button>
+                <button id="btn-map" onclick="showTab('map')" class="tab-btn flex-1 py-4 px-2 text-center text-gray-500 border-b-2 border-transparent hover:bg-gray-50 font-medium text-sm md:text-base transition-all duration-200 focus:outline-none">
+                    <span class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Overview</span>
+                    Map
+                </button>
+            </div>
+
+            <div class="p-6 md:p-10 min-h-[500px]">
+                
+                <!-- Day 1 Content -->
+                <div id="day1" class="tab-content transition-opacity duration-300 opacity-100">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-2 text-gray-900">Renaissance & Sunsets</h2>
+                            <p class="text-gray-500 mb-8 italic">Your journey begins in the heart of Tuscany.</p>
+                            
+                            <div class="space-y-6 relative border-l-2 border-blue-100 pl-6 ml-3">
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Afternoon: Arrival & Check-in</h3>
+                                    <p class="text-gray-600 mt-2">Fly BER to LIN, take the high-speed train to Florence. Check into your 6-bed mixed dorm at <a href="https://maps.app.goo.gl/wY5G2m5qP6ZfGvJw6" target="_blank" class="font-medium text-blue-600 link-hover">PLUS Florence Hostel</a>, featuring excellent social spaces and a quick walk to the center. <br><span class="inline-block mt-2 px-3 py-1 bg-green-50 text-green-700 text-sm font-medium rounded-full">Dorm Bed: ~€50 - €60 (1 night)</span></p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Late Afternoon: Grand Architecture</h3>
+                                    <p class="text-gray-600 mt-2">Walk through the beautiful alleys toward the <a href="https://maps.google.com/?cid=6165783601337790965" target="_blank" class="font-medium text-blue-600 link-hover">Cathedral of Santa Maria del Fiore</a> (The Duomo) to marvel at its incredible marble facade and dome.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Golden Hour: The Perfect Sketch</h3>
+                                    <p class="text-gray-600 mt-2">Cross the Arno river and hike up to <a href="https://maps.google.com/?cid=13040006563833401625" target="_blank" class="font-medium text-blue-600 link-hover">Piazzale Michelangelo</a>. This terraced piazza offers the most iconic panoramic sunset views over Florence—the perfect spot to bring out your watercolor markers.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/3 h-64 md:h-auto rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80" alt="Florence" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 Content -->
+                <div id="day2" class="tab-content hidden opacity-0 transition-opacity duration-300">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-2 text-gray-900">Fine Art to High Fashion</h2>
+                            <p class="text-gray-500 mb-8 italic">Transitioning from Tuscan history to Lombardy's elegance.</p>
+                            
+                            <div class="space-y-6 relative border-l-2 border-blue-100 pl-6 ml-3">
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Morning: Masters of the Renaissance</h3>
+                                    <p class="text-gray-600 mt-2">Dive into the <a href="https://maps.google.com/?cid=14834496294842582221" target="_blank" class="font-medium text-blue-600 link-hover">Uffizi Galleries</a> early to study the composition and techniques of Botticelli and da Vinci's masterpieces.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Afternoon: High-Speed to Milan</h3>
+                                    <p class="text-gray-600 mt-2">Train back north to Milan. Check into your 6-bed dorm at the lively <a href="https://maps.app.goo.gl/9bN6P6sMhD3Q6t2k8" target="_blank" class="font-medium text-blue-600 link-hover">Ostello Bello Grande</a> right by the Central Station for fast transit. <br><span class="inline-block mt-2 px-3 py-1 bg-green-50 text-green-700 text-sm font-medium rounded-full">Dorm Bed: ~€35 - €40/night (2 nights)</span></p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Evening: Canals & Architecture</h3>
+                                    <p class="text-gray-600 mt-2">Walk through the glass-vaulted <a href="https://maps.google.com/?cid=2813514643363451926" target="_blank" class="font-medium text-blue-600 link-hover">Galleria Vittorio Emanuele II</a>. Later, head to the <a href="https://maps.google.com/?cid=6849782691979720976" target="_blank" class="font-medium text-blue-600 link-hover">Cerchia dei Navigli</a> (Navigli District) for a sunset aperitivo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/3 h-64 md:h-auto rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1570054300305-6f91689bd485?auto=format&fit=crop&w=800&q=80" alt="Milan Navigli" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 Content -->
+                <div id="day3" class="tab-content hidden opacity-0 transition-opacity duration-300">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-2 text-gray-900">A Lakeside Retreat</h2>
+                            <p class="text-gray-500 mb-8 italic">Finding peace, quiet, and creative inspiration by the water.</p>
+                            
+                            <div class="space-y-6 relative border-l-2 border-blue-100 pl-6 ml-3">
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Morning: Train to Varenna</h3>
+                                    <p class="text-gray-600 mt-2">Take the scenic 1-hour train from Milan Central to Varenna Esino on the shores of Lake Como. Walk the "Passeggiata degli Innamorati" (Lover's Path) along the water.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Afternoon: Villa Monastero</h3>
+                                    <p class="text-gray-600 mt-2">Spend the afternoon in the botanical gardens of <a href="https://maps.google.com/?cid=5899485800677490675" target="_blank" class="font-medium text-blue-600 link-hover">Villa Monastero</a>. Its terraced waterfront statues and cypress trees provide a secluded environment for meditation and painting.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Evening: Return to Milan</h3>
+                                    <p class="text-gray-600 mt-2">Catch the local train back to Milan for your final night at Ostello Bello Grande.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/3 h-64 md:h-auto rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1542618585-618d227b61f8?auto=format&fit=crop&w=800&q=80" alt="Lake Como" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 Content -->
+                <div id="day4" class="tab-content hidden opacity-0 transition-opacity duration-300">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-2 text-gray-900">Auf Wiedersehen</h2>
+                            <p class="text-gray-500 mb-8 italic">A quick espresso before heading back to reality.</p>
+                            
+                            <div class="space-y-6 relative border-l-2 border-blue-100 pl-6 ml-3">
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Morning: Final Breakfast</h3>
+                                    <p class="text-gray-600 mt-2">Enjoy breakfast at the hostel, reviewing your sketches and notes from the trip.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[33px] top-1 h-4 w-4 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Afternoon: Flight to Berlin</h3>
+                                    <p class="text-gray-600 mt-2">Transit to Linate Airport for the easyJet flight back to Berlin Brandenburg Airport.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <!-- Map Overview Content -->
+<div id="map" class="tab-content hidden opacity-0 transition-opacity duration-300">
+    <h2 class="text-3xl font-bold mb-4 text-gray-900">Route Overview</h2>
+    <p class="text-gray-500 mb-6 italic">Visualizing your journey across Florence, Milan, and Lake Como.</p>
+    
+    <div class="w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-md border border-gray-200">
+        
+        <!-- Standard Google Maps iframe centered on Northern/Central Italy 
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Bologna,Italy&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+        -->
+
+        <!-- Your Custom Map Embed -->
+        <iframe src="https://www.google.com/maps/d/embed?mid=1OKmKRYvUzfxsT9JsgJdgnZ4GBSbxRMg&ehbc=2E312F" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    
+    <!-- Developer Note Block Commented Out
+    <div class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+        <p class="text-sm text-yellow-800">
+            <strong>Developer Note:</strong> The default Google Maps <code>iframe</code> without an API key does not natively support multiple distinct custom pins (like Florence + Milan + Como simultaneously). To display your specific plotted route with accurate pins on GitHub Pages, create a quick custom map on <a href="https://mymaps.google.com" target="_blank" class="font-semibold underline">Google My Maps</a>, click "Share > Embed on my site", and drop that specific <code>src</code> URL into this block's iframe.
+        </p>
+    </div>
+    -->
+</div>
+
+            </div>
+        </div>
+        
+        <div class="text-center mt-8 text-sm text-gray-400">
+            Designed for Friends Travellers. 
+        </div>
+    </main>
+</body>
+</html>
